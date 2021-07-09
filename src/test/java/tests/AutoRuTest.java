@@ -41,14 +41,6 @@ public class AutoRuTest {
         String titleText = driver.findElementById("ru.auto.ara:id/name").getText();
         boolean isTextPresent = titleText.contains("Audi A4");
         Assert.assertTrue(isTextPresent);
-
-        //ru.auto.ara:id/tvText
-        //
-        //open app
-        //choose make and model
-        //click 'show'
-        //click on 1st car from search results
-        //assert car name
     }
 
     @AfterMethod
