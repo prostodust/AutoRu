@@ -11,14 +11,14 @@ public abstract class DriverManager {
 
     AppiumDriver driver;
     DesiredCapabilities cap = new DesiredCapabilities();
-    
+
     protected abstract AppiumDriver createDriver(AppiumDriverLocalService service);
-   
+
     public AppiumDriver getDriver(AppiumDriverLocalService service, String deviceName, String platform) {
         if (null == driver) {
             cap.setCapability(MobileCapabilityType.PLATFORM_NAME, platform);
             cap.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
-            cap.setCapability("appActivity",PropertyManager.getInstance().get("application.activity.name"));
+            cap.setCapability("appActivity", PropertyManager.getInstance().get("application.activity.name"));
             cap.setCapability("appPackage", PropertyManager.getInstance().get("application.package.name"));
             cap.setCapability("avd", deviceName);
             driver = createDriver(service);

@@ -23,7 +23,7 @@ public class AutoRuTest {
     public void searchTest() {
         DriverManager driverManager = new AndroidDriverManager();
         appiumServer = AppiumServerJava.startServer();
-        driver = driverManager.getDriver(appiumServer,"New_Device_1_API_30", "Android");
+        driver = driverManager.getDriver(appiumServer, "New_Device_1_API_30", "Android");
         driver.findElementByXPath("//*[@text='Марка и модель']").click();
         driver.findElementByXPath("//*[@text='Audi']").click();
         driver.findElementByXPath("//*[@text='A4']/../..//android.widget.CheckBox").click();
@@ -35,7 +35,7 @@ public class AutoRuTest {
         int startY = (int) (height * 0.9);
         int endY = (int) (height * 0.1);
         TouchAction action = new TouchAction(driver);
-        action.press(point(startX,startY)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(10))).moveTo(point(startX, endY)).release().perform();
+        action.press(point(startX, startY)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(10))).moveTo(point(startX, endY)).release().perform();
 
         driver.findElementById("ru.auto.ara:id/image").click();
         String titleText = driver.findElementById("ru.auto.ara:id/name").getText();
